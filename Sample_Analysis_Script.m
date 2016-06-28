@@ -6,11 +6,18 @@
 % in the Cy3 and Cy5 wavelenghts. This sample was selected because you 
 % can observe transcriptional bursting from both alleles, one colocalizing
 % with one allele and the other with the other. 
+
+
+%% Read YAML FILE
+expData = ReadYaml('readme.yaml');
+
+
+
 %% Sample snpMap Definition
 snpMap.channels = {'gfp', 'tmr', 'cy'};
-snpMap.names = {'Burst_Sample_RNA', ...
-                'ALLELE 1', ...
-                'ALLELE 2',};
+snpMap.names = {expData.channels.gfp.probe, ...
+                expData.channels.tmr.probe, ...
+                expData.channels.cy.probe,};
 
 %% Gaussian Fitting
 
