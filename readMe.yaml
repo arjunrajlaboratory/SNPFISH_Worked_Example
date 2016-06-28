@@ -1,0 +1,40 @@
+# Rajlab standard readme format in YAML
+--- 
+ID      : DUSP6 SAMPLE EXP ID
+date    : 2013-08-06
+name    : DUSP6 BURST
+
+sample:
+    organism    : Mouse
+    cell type   : MEF
+
+    
+purpose : >
+  Sample Data Set SHOWING BURST
+
+experimentalConditions:
+    antifade : TRUE 
+    fixation : formaldehyde
+    
+
+microscopeInformation:
+    scope ID : 2
+    light source intensity : 100
+    perfect Focus : FALSE
+
+channels:
+    tmr :
+        dye   : cy3
+        probe : B6
+    cy : 
+        dye   : cy5
+        probe : CAST
+    gfp : 
+        dye : atto488
+        probe : Dusp6 guide probe
+        
+Keywords:
+
+ 
+notes: |
+ Decent looking sample.
