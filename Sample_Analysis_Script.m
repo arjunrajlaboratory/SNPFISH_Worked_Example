@@ -36,8 +36,8 @@ improc2.processing.updateAll()
 %% Perform SNP Colocalization
 
 dataAdder = improc2.processing.DataAdder();
-dataAdder.addDataToObject(improc2.nodeProcs.SNPColocalizerData(snpMap, ...
-    'finalDistance', 1.5, 'initialDistance', 3.0), snpMap.channels, 'snpColoc');
+dataAdder.addDataToObject(improc2.nodeProcs.SNPColocalizer(snpMap, ...
+    'zAllow', 3), snpMap.channels, 'snpColoc2'); % IF YOU ARE RUNNING THE ANALYSIS YOURSELF AND WANT TO ADD A NEW NODE, CHANGE THE LABEL FROM 'snpColoc2' to 'YOURNAMEHERE' or whatever you like. Note: the node with label 'snpColoc' is an old version of the SNPColocalizer node analysis
 dataAdder.repeatForAllObjectsAndQuit();
 
 improc2.processing.updateAll();
@@ -57,7 +57,7 @@ cyAll = [];
 tmrAll = [];
 
 while(tools.iterator.continueIteration)
-    results = tools.objectHandle.getData('snpColoc');
+    results = tools.objectHandle.getData('snpColoc2');
     
     guide = struct2table(results.data.gfp);
     guide.cellID = ones(height(guide),1) * cellID;
