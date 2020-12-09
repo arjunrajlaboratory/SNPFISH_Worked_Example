@@ -112,8 +112,8 @@ figure(fighandle)
 imshow(imgmax,[]);  %Plot image
 hold on
 plot(guide.position(:,1), guide.position(:,2), 'wo'); 
-plot(guide.position(guide.labels == 'ALLELE 1',1), guide.position(guide.labels == 'ALLELE 1',2),'co','markersize',6); %Plot the co_localized spots
-plot(guide.position(guide.labels ==  'ALLELE 2',1), guide.position(guide.labels == 'ALLELE 2',2),'Color', [1, 0.65, 0.2], ...
+plot(guide.position(guide.labels == snpMap.names{2},1), guide.position(guide.labels == snpMap.names{2},2),'co','markersize',6); %Plot the co_localized spots
+plot(guide.position(guide.labels ==  snpMap.names{3},1), guide.position(guide.labels == snpMap.names{3},2),'Color', [1, 0.65, 0.2], ...
     'LineStyle', 'none', 'Marker','o','markersize',6); %Plot the co_localized spots
 plot(guide.position(guide.labels == '3-color',1), guide.position(guide.labels == '3-color',2),'mo','markersize',6);
 legend({snpMap.names{1}, snpMap.names{2},snpMap.names{3},'3-color'})
